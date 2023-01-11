@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    margin: auto;
+    width: 50%;
+    background-color: red;
+    text-align: center;
+}
+
+.card_main{
+    height: auto;
+    background-color: #a5bbdd;
+    color: rgb(243, 231, 231);
+    display: flex;
+    flex-wrap: wrap;
+}
+.card_inner{
+    width: 33.3%;
+    background-color: rgba(75, 100, 247, 0.865);
+    display: grid;
+    place-items: center;
+}
+.card_name span{
+    font-size: 10px;
+    font-weight: bold;
+}
+.card_name{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.card_small{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 8px 10px rgb(76, 75, 75);
+}
