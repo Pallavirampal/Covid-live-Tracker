@@ -1,5 +1,5 @@
 import React from 'react'
-import Covid from './components/covid';
+import Covid from './components/covid.jsx';
 
 const App = () => {
   return (

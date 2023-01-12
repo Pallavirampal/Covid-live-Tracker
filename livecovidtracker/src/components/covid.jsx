@@ -6,17 +6,17 @@ const Covid = () => {
 
     const getCovidData = async () => {
         try {
-            const res = await fetch('https://api.rootnet.in/covid19-in/stats/latest');
+            const res = await fetch('https://api.rootnet.in/covid19-in/stats/testing/history');
             const actualData = await res.json();
-            console.log(actualData.regional[0]);
-            setData(actualData.regional[0]);
+            console.log(actualData.data[0]);
+            setData(actualData.data[0]);
         } catch (err) {
             console.log(err);
         }
     }
     useEffect(() => {
         getCovidData();
-    }, []);
+    }, [])
 
     return (
         <>
@@ -31,7 +31,7 @@ const Covid = () => {
                         </div>
                         <div className="card_inner1">
                             <p className='card_name'><span>Total </span>RECOVERED</p>
-                            <p className="card_text">{data.discharged}</p>
+                            <p className="card_text">{data.totalPositiveCases}</p>
                         </div>
                         <div className="card_inner2">
                             <p className='card_name'><span>Total </span>CONFIRMED</p>
