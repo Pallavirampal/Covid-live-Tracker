@@ -6,10 +6,10 @@ const Covid = () => {
 
     const getCovidData = async () => {
         try {
-            const res = await fetch('https://api.rootnet.in/covid19-in/stats/testing/history');
+            const res = await fetch('https://data.covid19india.org/data.json');
             const actualData = await res.json();
-            console.log(actualData.data[0]);
-            setData(actualData.data[0]);
+            console.log(actualData.statewise[0]);
+            setData(actualData.statewise[0]);
         } catch (err) {
             console.log(err);
         }
@@ -31,23 +31,23 @@ const Covid = () => {
                         </div>
                         <div className="card_inner1">
                             <p className='card_name'><span>Total </span>RECOVERED</p>
-                            <p className="card_text">{data.totalPositiveCases}</p>
+                            <p className="card_text">{data.recovered}</p>
                         </div>
                         <div className="card_inner2">
                             <p className='card_name'><span>Total </span>CONFIRMED</p>
-                            <p className="card_text">INDIA</p>
+                            <p className="card_text">{data.confirmed}</p>
                         </div>
                         <div className="card_inner3">
                             <p className='card_name'><span>Total </span>DEATH</p>
-                            <p className="card_text">INDIA</p>
+                            <p className="card_text">{data.deaths}</p>
                         </div>
                         <div className="card_inner4">
                             <p className='card_name'><span>Total </span>ACTIVE</p>
-                            <p className="card_text">INDIA</p>
+                            <p className="card_text">{data.active}</p>
                         </div>
                         <div className="card_inner5">
                             <p className='card_name'><span>Last </span>UPDATED</p>
-                            <p className="card_text">INDIA</p>
+                            <p className="card_text">{data.lastupdatedtime}</p>
                         </div>
                     </div>
                 </div>
